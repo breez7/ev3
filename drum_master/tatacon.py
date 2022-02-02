@@ -7,6 +7,7 @@ from ev3dev2.sensor import INPUT_1, INPUT_2, INPUT_3, INPUT_4
 from ev3dev2.sensor.lego import TouchSensor
 import evdev, time
 from evdev import InputDevice, categorize, ecodes
+from ev3dev2.sound import Sound
 
 unk = -1
 NULL_CHAR = chr(0)
@@ -43,6 +44,9 @@ new_ts2 = True
 new_ts3 = True
 new_ts4 = True
 
+sound = Sound()
+sound.speak('I am ready')
+
 while True:
     if ts1.is_pressed and new_ts1:
         write_report(NULL_CHAR*2 + chr(hid_keyboard.index(evdev.ecodes.KEY_F)) + NULL_CHAR*5)
@@ -69,4 +73,6 @@ while True:
         write_report(NULL_CHAR*8)
         new_ts4 = True
 
+    # sleep(0.005)
+    sleep(0.01)
 

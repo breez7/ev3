@@ -1,0 +1,12 @@
+[Unit]
+Description=HID Proxy
+After=ev3-usb@musb-hdrc.1.auto.service
+Requires=ev3-usb@musb-hdrc.1.auto.service
+
+[Service]
+ExecStart=/usr/bin/python3 /home/robot/ev3/drum_master/tatacon.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
