@@ -51,25 +51,25 @@ while True:
     if ts1.is_pressed and new_ts1:
         write_report(NULL_CHAR*2 + chr(hid_keyboard.index(evdev.ecodes.KEY_F)) + NULL_CHAR*5)
         new_ts1 = False
-    if ts1.is_released:
+    if ts1.is_released and not new_ts1:
         write_report(NULL_CHAR*8)
         new_ts1 = True
     if ts2.is_pressed and new_ts2:
         write_report(NULL_CHAR*2 + chr(hid_keyboard.index(evdev.ecodes.KEY_J)) + NULL_CHAR*5)
         new_ts2 = False
-    if ts2.is_released:
+    if ts2.is_released and not new_ts2:
         write_report(NULL_CHAR*8)
         new_ts2 = True
     if ts3.is_pressed and new_ts3:
         write_report(NULL_CHAR*2 + chr(hid_keyboard.index(evdev.ecodes.KEY_D)) + NULL_CHAR*5)
         new_ts3 = False
-    if ts3.is_released:
+    if ts3.is_released and not new_ts3:
         write_report(NULL_CHAR*8)
         new_ts3 = True
     if ts4.is_pressed and new_ts4:
         write_report(NULL_CHAR*2 + chr(hid_keyboard.index(evdev.ecodes.KEY_K)) + NULL_CHAR*5)
         new_ts4 = False
-    if ts4.is_released:
+    if ts4.is_released and not new_ts4:
         write_report(NULL_CHAR*8)
         new_ts4 = True
 
